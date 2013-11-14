@@ -13,6 +13,7 @@
 	ben@xoxco.com
 
 */
+var count = 0;
 
 (function($) {
 
@@ -192,13 +193,14 @@
       inputPadding: 6*2
     },options);
 
-		this.each(function() { 
+		this.each(function() {
+			count++;
 			if (settings.hide) { 
 				$(this).hide();				
 			}
 			var id = $(this).attr('id');
 			if (!id || delimiter[$(this).attr('id')]) {
-				id = $(this).attr('id', 'tags' + new Date().getTime()).attr('id');
+				id = $(this).attr('id', 'tags' + count).attr('id');
 			}
 			
 			var data = jQuery.extend({
